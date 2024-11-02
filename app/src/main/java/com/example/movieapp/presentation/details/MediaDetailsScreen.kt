@@ -22,7 +22,11 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.example.movieapp.data.models.GenreApi
+import com.example.movieapp.domain.models.Cast
+import com.example.movieapp.domain.models.CastResponse
 import com.example.movieapp.domain.models.Media
+import com.example.movieapp.domain.models.MediaDetails
 import com.example.movieapp.domain.models.MediaType
 import com.example.movieapp.presentation.components.CastDetails
 import com.example.movieapp.presentation.components.Genres
@@ -188,15 +192,84 @@ fun SharedTransitionScope.MediaDetailsScreenContent(
 fun SharedTransitionScope.FilmDetailsScreenPreview() {
     MediaDetailsScreenContent(
         media = Media(
-            id = 1,
-            posterPath = "https://image.tmdb.org/t/p/w500/6MKr3KgOLmzOP6MSuZERO41Lpkt.jpg",
-            name = "The Tomorrow War",
-            voteAverage = 7.5,
-            releaseDate = "2021-07-02",
-            overview = "The world is stunned when a group of time travelers arrive from the year 2051 to deliver an urgent message: Thirty years in the future, mankind is losing a global war against a deadly alien species. The only hope for survival is for soldiers and civilians from the present to be transported to the future and join the fight. Among those recruited is high school",
+            adult = false,
+            backdropPath = "/tX1hE01H2Ye3Q60g6pWCn4kY1.jpg",
+            firstAirDate = "2023-11-17",
+            genreIds = listOf(18, 10759),
+            id = 109449,
+            name = "The Mandalorian",
+            originCountry = listOf("US"),
+            originalLanguage = "en",
+            originalName = "The Mandalorian",
+            overview = "Set after the fall of the Galactic Empire, and before the emergence of the First Order, The Mandalorian follows the travails of a lone gunfighter in the outer reaches of the galaxy.",
+            popularity = 875.322,
+            posterPath = "/9xqv0NYfeiSOKz0fPLbO9QhXw0.jpg",
+            voteAverage = 8.3,
+            voteCount = 11178,
+            releaseDate = ""
         ),
         mediaType = MediaType.TV_SHOW,
-        state = MediaDetailsUiState(),
+        state = MediaDetailsUiState(
+            casts = CastResponse(
+                cast = listOf(
+                    Cast(
+                        id = 123,
+                        name = "Mark Hamill",
+                        profilePath = "/some/path/to/image.jpg",
+                        character = "Luke Skywalker"
+                    ),
+                    Cast(
+                        id = 123,
+                        name = "Mark Hamill",
+                        profilePath = "/some/path/to/image.jpg",
+                        character = "Luke Skywalker"
+                    ),
+                    Cast(
+                        id = 123,
+                        name = "Mark Hamill",
+                        profilePath = "/some/path/to/image.jpg",
+                        character = "Luke Skywalker"
+                    ),
+                    Cast(
+                        id = 123,
+                        name = "Mark Hamill",
+                        profilePath = "/some/path/to/image.jpg",
+                        character = "Luke Skywalker"
+                    ),
+                )
+            ),
+            isLoading = false,
+            isLoadingCasts = false,
+            error = null,
+            errorCasts = null,
+            mediaDetails = MediaDetails(
+                adult = false,
+                backdropPath = "/tX1hE01H2Ye3Q60g6pWCn4kY1.jpg",
+                budget = 100000000,
+                genres = listOf(
+                    GenreApi(id = 28, name = "Action"),
+                    GenreApi(id = 12, name = "Adventure"),
+                    GenreApi(id = 878, name = "Science Fiction")
+                ),
+                homepage = "https://www.starwars.com/",
+                id = 11,
+                imdbId = "tt2379713",
+                originalLanguage = "en",
+                originalTitle = "Star Wars: The Force Awakens",
+                overview = "Thirty years after defeating the Galactic Empire, Han Solo and Chewbacca team up with a new generation of heroes—Rey, Finn, and Poe Dameron—to defeat the evil First Order.",
+                popularity = 149.857,
+                posterPath = "/d36BcFteHbeJXFXdMhAuDA7FMZM.jpg",
+                releaseDate = "2015-12-15",
+                revenue = 2068223628,
+                runtime = 138,
+                status = "Released",
+                tagline = "The Force Awakens",
+                title = "Star Wars: The Force Awakens",
+                video = false,
+                voteAverage = 7.9,
+                voteCount = 12163
+            )
+        ),
         onEvents = {},
         isLiked = false,
         animatedVisibilityScope = this as AnimatedVisibilityScope

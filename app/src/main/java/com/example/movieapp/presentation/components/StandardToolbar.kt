@@ -15,6 +15,7 @@
  */
 package com.kanyideveloper.muviz.common.presentation.components
 
+import android.content.res.Configuration
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -63,6 +64,7 @@ fun StandardToolbar(
 }
 
 @Preview
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_NO)
 @Composable
 fun StandardToolbarPreview() {
     MovieAppTheme {
