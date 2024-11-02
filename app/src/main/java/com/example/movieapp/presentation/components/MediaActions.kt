@@ -1,5 +1,6 @@
 package com.example.movieapp.presentation.components
 
+import android.content.res.Configuration
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.material.icons.Icons
@@ -11,6 +12,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import com.example.movieapp.R
 import com.example.movieapp.domain.models.Media
 import com.example.movieapp.presentation.details.MediaDetailsUiEvents
@@ -60,4 +62,14 @@ fun MediaActions(
             )
         }
     }
+}
+
+@Preview
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Composable
+fun MediaActionsPreview() {
+    MediaActions(
+        onEvents = {},
+        isLiked = true,
+    )
 }
